@@ -21,6 +21,7 @@ class Homepage extends Component {
 											<li key = {book.id}>
 												<Book
 													book = {book}
+													changeShelf = {this.props.changeShelf}
 												/>
 											</li>
 										))
@@ -39,6 +40,7 @@ class Homepage extends Component {
 											<li key = {book.id}>
 												<Book
 													book = {book}
+													changeShelf = {this.props.changeShelf}
 												/>
 											</li>
 										))
@@ -57,6 +59,7 @@ class Homepage extends Component {
 											<li key = {book.id}>
 												<Book
 													book = {book}
+													changeShelf = {this.props.changeShelf}
 												/>
 											</li>
 										))
