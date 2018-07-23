@@ -53,7 +53,10 @@ class Searchpage extends Component {
 						{
 							this.state.searchMatches.map(searchMatch => (
 								<li key={searchMatch.id}>
-									<Book book={searchMatch}/>
+									<Book
+										book={searchMatch}
+										changeShelf={this.props.changeShelf}
+									/>
 								</li>
 							))
 						}
