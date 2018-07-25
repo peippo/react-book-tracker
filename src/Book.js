@@ -25,7 +25,6 @@ class Book extends Component {
 				</div>
 				<div className="book-title">{this.props.book.title}</div>
 				<div className="book-authors">
-
 					{
 						authors.map(author => (
 							<span className="book-author" key = {author.id}>
@@ -33,7 +32,6 @@ class Book extends Component {
 							</span>
 						))
 					}
-
 				</div>
 			</div>
 		)

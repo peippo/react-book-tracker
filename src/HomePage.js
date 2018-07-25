@@ -15,21 +15,18 @@ class Homepage extends Component {
 						books = {this.props.books}
 						updateBooks = {this.props.updateBooks}
 						changeShelf = {this.props.changeShelf}
-						camelize = {this.props.camelize}
 					/>
 					<Shelf
 						title="Want to read"
 						books = {this.props.books}
 						updateBooks = {this.props.updateBooks}
 						changeShelf = {this.props.changeShelf}
-						camelize = {this.props.camelize}
 					/>
 					<Shelf
 						title="Read"
 						books = {this.props.books}
 						updateBooks = {this.props.updateBooks}
 						changeShelf = {this.props.changeShelf}
-						camelize = {this.props.camelize}
 					/>
 				</div>
 				<div className="open-search">

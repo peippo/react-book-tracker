@@ -54,8 +54,8 @@ class Searchpage extends Component {
 								return (
 									<li key={searchMatch.id}>
 										<Book
-											book={searchMatch}
-											changeShelf={this.props.changeShelf}
+											book = {searchMatch}
+											changeShelf = {this.props.changeShelf}
 											shelf = {shelf}
 										/>
 									</li>
