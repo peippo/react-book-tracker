@@ -33,6 +33,10 @@ body, .app {
   box-shadow: 0 -30px 90px -30px #3c2812 inset;
 }
 
+.bookshelf:nth-child(odd) {
+  background-position: 50% 50%;
+}
+
 .bookshelf:last-child {
   padding-bottom: 100px;
 }
