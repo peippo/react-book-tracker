@@ -4,6 +4,7 @@ class Book extends Component {
 	render() {
 		let bookThumbnail = this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail : '';
 		let currentShelf = this.props.book.shelf ? this.props.book.shelf : this.props.shelf;
+		let authors = this.props.book.authors || [];
 
 		return (
 			<div className="book">
@@ -23,7 +24,17 @@ class Book extends Component {
 					</div>
 				</div>
 				<div className="book-title">{this.props.book.title}</div>
-				<div className="book-authors">{this.props.book.authors}</div>
+				<div className="book-authors">
+
+					{
+						authors.map(author => (
+							<span className="book-author" key = {author.id}>
+								{author}
+							</span>
+						))
+					}
+
+				</div>
 			</div>
 		)
 	}
