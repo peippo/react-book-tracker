@@ -29,7 +29,7 @@ class BooksApp extends React.Component {
 	// https://stackoverflow.com/questions/2970525/converting-any-string-into-camel-case
 	camelize = (str) => {
 		return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
-			return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
+			return index === 0 ? letter.toLowerCase() : letter.toUpperCase();
 		}).replace(/\s+/g, '');
 	}
 

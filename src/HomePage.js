@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Shelf from './Shelf.js';
-import Book from './Book.js';
 import { Link } from 'react-router-dom';
 
 class Homepage extends Component {
