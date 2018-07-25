@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Shelf from './Shelf.js';
 import Book from './Book.js';
 import { Link } from 'react-router-dom';
 
@@ -10,71 +11,32 @@ class Homepage extends Component {
 					<h1>MyReads</h1>
 				</div>
 				<div className="list-books-content">
-					<div>
-						<div className="bookshelf">
-							<h2 className="bookshelf-title">Currently Reading</h2>
-							<div className="bookshelf-books">
-								<ol className="books-grid">
-									{
-										this.props.books
-										.filter(book => book.shelf === 'currentlyReading')
-										.map(book => (
-											<li key = {book.id}>
-												<Book
-													book = {book}
-													changeShelf = {this.props.changeShelf}
-												/>
-											</li>
-										))
-									}
-								</ol>
-							</div>
-						</div>
-						<div className="bookshelf">
-							<h2 className="bookshelf-title">Want to Read</h2>
-							<div className="bookshelf-books">
-								<ol className="books-grid">
-									{
-										this.props.books
-										.filter(book => book.shelf === 'wantToRead')
-										.map(book => (
-											<li key = {book.id}>
-												<Book
-													book = {book}
-													changeShelf = {this.props.changeShelf}
-												/>
-											</li>
-										))
-									}
-								</ol>
-							</div>
-						</div>
-						<div className="bookshelf">
-							<h2 className="bookshelf-title">Read</h2>
-							<div className="bookshelf-books">
-								<ol className="books-grid">
-									{
-										this.props.books
-										.filter(book => book.shelf === 'read')
-										.map(book => (
-											<li key = {book.id}>
-												<Book
-													book = {book}
-													changeShelf = {this.props.changeShelf}
-												/>
-											</li>
-										))
-									}
-								</ol>
-							</div>
-						</div>
-					</div>
+					<Shelf
+						title = "Currently reading"
+						books = {this.props.books}
+						updateBooks = {this.props.updateBooks}
+						changeShelf = {this.props.changeShelf}
+						camelize = {this.props.camelize}
+					/>
+					<Shelf
+						title="Want to read"
+						books = {this.props.books}
+						updateBooks = {this.props.updateBooks}
+						changeShelf = {this.props.changeShelf}
+						camelize = {this.props.camelize}
+					/>
+					<Shelf
+						title="Read"
+						books = {this.props.books}
+						updateBooks = {this.props.updateBooks}
+						changeShelf = {this.props.changeShelf}
+						camelize = {this.props.camelize}
+					/>
 				</div>
 				<div className="open-search">
 					<Link to="/search">Add a book</Link>
 				</div>
 			</div>
-
 		)
 	}
 }
