@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import HomePage from './HomePage.js';
 import SearchPage from './SearchPage.js';
 
@@ -12,7 +13,7 @@ class BooksApp extends React.Component {
 
 	updateBooks() {
 		BooksAPI.getAll().then((books) => {
-			this.setState({ books })
+			this.setState({ books: books })
 		});
 	}
 
@@ -28,11 +29,21 @@ class BooksApp extends React.Component {
 	render() {
 		return (
 			<div className="app">
-				<HomePage
-				books = {this.state.books}
-				updateBooks = {this.updateBooks}
-				changeShelf = {this.changeShelf}
-				/>
+				<Route exact path="/" render={() => (
+					<HomePage
+					books = {this.state.books}
+					updateBooks = {this.updateBooks}
+					changeShelf = {this.changeShelf}
+					/>
+				)} />
+
+				<Route exact path="/search" render={() => (
+					<SearchPage
+						books = {this.state.books}
+						updateBooks = {this.updateBooks}
+						changeShelf = {this.changeShelf}
+					/>
+				)} />
 			</div>
 		)
 	}
